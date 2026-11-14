@@ -1,0 +1,31 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- Granted by the user in Usage Access settings through AppOps, not the normal runtime permission dialog. -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+    <application android:label="个人时间 Agent" android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:usesCleartextTraffic="false" android:allowBackup="false">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity>
+        <receiver android:name=".platform.ReminderAlarmReceiver" android:exported="false" />
+        <receiver android:name=".platform.ReminderActionReceiver" android:exported="false" />
+        <receiver android:name=".platform.WidgetActionReceiver" android:exported="false" />
+        <receiver android:name=".platform.ReminderBootReceiver" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.BOOT_COMPLETED" /><action android:name="android.intent.action.MY_PACKAGE_REPLACED" /></intent-filter>
+        </receiver>
+        <receiver android:name=".platform.AgentWidget" android:exported="true">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/agent_widget_info" />
+        </receiver>
+        <service android:name=".platform.AgentNotificationListener" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true">
+            <intent-filter><action android:name="android.service.notification.NotificationListenerService" /></intent-filter>
+        </service>
+        <service android:name=".platform.AgentAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="true">
+            <intent-filter><action android:name="android.accessibilityservice.AccessibilityService" /></intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/agent_accessibility_service" />
+        </service>
+    </application>
+</manifest>

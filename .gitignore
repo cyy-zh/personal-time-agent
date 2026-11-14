@@ -1,0 +1,33 @@
+# Gradle / Android build output
+.gradle/
+**/build/
+local.properties
+captures/
+*.apk
+*.aab
+*.hprof
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.dpapi
+secrets.properties
+
+# OS / temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.local/
+outputs/
+*.ptabak

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="8dp" android:background="#FFF6F7FA" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:id="@+id/widget_header" android:layout_width="match_parent" android:layout_height="wrap_content" android:textStyle="bold" android:textColor="#FF202538" android:textSize="13sp" />
+    <TextView android:id="@+id/widget_current" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#FF202538" android:textSize="12sp" android:maxLines="2" />
+    <TextView android:id="@+id/widget_next" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="#FF454A58" android:textSize="11sp" android:maxLines="1" />
+    <TextView android:id="@+id/widget_hint" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="10sp" android:maxLines="1" />
+    <TextView android:id="@+id/widget_stamp" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="10sp" android:maxLines="1" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/widget_done" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:text="完成" android:textSize="10sp" />
+        <Button android:id="@+id/widget_defer" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:text="推迟" android:textSize="10sp" />
+        <Button android:id="@+id/widget_add" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:text="快速加" android:textSize="10sp" />
+        <Button android:id="@+id/widget_open" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:text="打开" android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>
